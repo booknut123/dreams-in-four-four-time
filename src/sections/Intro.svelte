@@ -33,7 +33,7 @@
     position: absolute;
     inset: 0;
     background: url("../lib/images/city-intro.jpg") center/cover no-repeat;
-    opacity: 0.2;
+    opacity: 0.25;
     z-index: 0;
   }
   .intro::after {
@@ -55,7 +55,7 @@
   }
 
   .intro-content h1 {
-    font-family: "DM Serif Text", serif;
+    font-family: "Caveat", sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--pomp);
     text-shadow: 1px 1px 2px var(--black);

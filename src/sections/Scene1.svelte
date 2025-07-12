@@ -11,7 +11,7 @@
       <Heading
         scene="Scene 1"
         title="Quiet Block, Loud Dreams"
-        subtitle=' "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
+        subtitle=' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
       />
     </ArticleText>
   {/snippet}
@@ -34,7 +34,7 @@
         imagining her own producer tag.
       </ArticleText>
       <ArticleText>
-        <em>But dreaming doesn’t pay rent.</em> And in Ari’s world, dreaming often
+        <strong>But dreaming doesn’t pay rent.</strong> And in Ari’s world, dreaming often
         comes last — after school, after helping out at home, after figuring out
         how to get to the other side of the city to record with friends.
       </ArticleText>
@@ -47,7 +47,7 @@
     <p>
       In a country where <strong>opportunity</strong> should meet
       <strong>talent</strong>, Ari often finds
-      <em>silence</em> where there should be <em>sound</em>.
+      <strong>silence</strong> where there should be <strong>sound</strong>.
     </p>
   </FullWidth>
 </div>
@@ -63,12 +63,8 @@
   }
 
   .scene-text strong, .full-width-text strong {
-    color: var(--pomp);
-    font-weight: 600;
-  }
-
-  .scene-text em, .full-width-text em {
     color: var(--rose);
+    font-weight: 600;
   }
 
   .full-width-text {
