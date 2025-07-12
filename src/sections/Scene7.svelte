@@ -6,7 +6,7 @@
   import Spacer from "../lib/Spacer.svelte";
 </script>
 
-<Spacer /> <Spacer />
+<Spacer />
 
 <Scroller layout="right">
   {#snippet sticky()}
@@ -54,33 +54,11 @@
 
 <div class="full-width-text">
   <FullWidth>
-    <p>Because when we invest in talent,</p>
-    <p>we don’t just change one life —</p>
-    <p>we change the soundtrack of our future.</p>
+    <p>Because when we invest in talent,<br />
+    we don’t just change one life — <br />
+    we change the soundtrack of our future.</p>
   </FullWidth>
 </div>
 
 <style>
-  .scene-text {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--black);
-    max-width: 640px;
-    text-align: left;
-  }
-
-  .scene-text strong, .full-width-text strong {
-    color: var(--pomp);
-    font-weight: 600;
-  }
-
-  .scene-text em, .full-width-text em {
-    color: var(--rose);
-  }
-
-  .full-width-text {
-    justify-content: center;
-    align-items: center;
-  }
 </style>

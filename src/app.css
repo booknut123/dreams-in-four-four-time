@@ -21,3 +21,27 @@
 
   background-color: #f0f4f6;
 }
+
+.scene-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--black);
+  max-width: 640px;
+  text-align: left;
+}
+
+.scene-text strong, .full-width-text strong {
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.scene-text em, .full-width-text em {
+  color: #a2bba0;
+  font-weight: 600;
+}
+
+.full-width-text {
+  justify-content: center;
+  align-items: center;
+}

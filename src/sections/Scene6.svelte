@@ -56,27 +56,3 @@
   </FullWidth>
 </div> -->
 
-<style>
-  .scene-text {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--black);
-    max-width: 640px;
-    text-align: left;
-  }
-
-  .scene-text strong, .full-width-text strong {
-    color: var(--pomp);
-    font-weight: 600;
-  }
-
-  .scene-text em, .full-width-text em {
-    color: var(--rose);
-  }
-
-  .full-width-text {
-    justify-content: center;
-    align-items: center;
-  }
-</style>

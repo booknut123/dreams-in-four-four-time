@@ -13,76 +13,72 @@
     <ArticleText>
       <Heading
         scene="Scene 5"
-        title="Same Story, Different Cities"
-        subtitle=' "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
+        title="Same stories, Different Cities"
+        subtitle="Generational patterns. Cross-country echoes."
       />
     </ArticleText>
   {/snippet}
 
   {#snippet scrolly()}
-    <div class="scene-text">
-      <ArticleText>
-        You’d think things would change across state lines. But Oakland’s numbers mirror Atlanta’s.
-      </ArticleText>
-      <ArticleText>
-        In Boston, the contrast is even starker. The median net worth of White households is $247,500. For Black households? Just $8.
-      </ArticleText>
-      <ArticleText>
-        Not $800. Not $80. 
-      </ArticleText>
-      <ArticleText>
-        Eight. Dollars.
-      </ArticleText>
-      <ArticleText>
-        This isn’t about effort. Ari works hard. Her mom works hard. Zora works hard.
-      </ArticleText>
-      <ArticleText>
-        This is about structures - about decades of underinvestment. About redlining and divestment and being told to “just build wealth” in a system designed to extract it.
-      </ArticleText>
-      <ArticleText>
-        Ari story is personal — but it’s not rare.
-      </ArticleText>
-      <ArticleText>
-        The dream is real.
-      </ArticleText>
-      <ArticleText>
-        The blocks are realer.
-      </ArticleText>
+  <div class="scene-text">
+    <ArticleText>
+      You’d think things would change across state lines. But Oakland’s numbers mirror Atlanta’s.
+    </ArticleText>
+    <ArticleText>
+      In Boston, the contrast is even starker. A Boston Federal Reserve Bank 2015 study reported that the median net worth of White households is <strong>$250,000</strong>. For Black households? Just <strong>$8</strong>.
+    </ArticleText>
     </div>
   {/snippet}
 </Scroller>
 
-<!-- <div class="full-width-text">
+<FullWidth>
+  <div class="dramatic-statement">
+    <p>Not $800.</p>
+    <p>Not $80.</p>
+    <p><strong><em>Eight. Dollars.</em></strong></p>
+  </div>
+</FullWidth>
+
+<Spacer />
+
+<Scroller layout="left">
+  {#snippet sticky()}
+    <ArticleText>
+      <Heading scene="" title="" subtitle="“It’s not about effort.”" />
+    </ArticleText>
+  {/snippet}
+
+  {#snippet scrolly()}
+    <ArticleText>
+      This isn’t about effort. Ari works hard. Her mom works hard. Zora works hard.
+    </ArticleText>
+    <ArticleText>
+      This is about structures — about decades of underinvestment. About redlining and divestment and being told to “just build wealth” in a system designed to extract it.
+    </ArticleText>
+  {/snippet}
+</Scroller>
+
+<div class="full-width-text">
   <FullWidth>
     <p>
-      In a country where <strong>opportunity</strong> should meet
-      <strong>talent</strong>, Ari often finds
-      <em>silence</em> where there should be <em>sound</em>.
+      Ari's story is personal - but it's not rare. <br />
+      The <em>dream</em> is <em>real</em>. <br />
+      The <em>blocks</em> are <em>realer</em>. <br />
     </p>
   </FullWidth>
-</div> -->
+</div>
 
 <style>
-  .scene-text {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--black);
-    max-width: 640px;
-    text-align: left;
-  }
-
-  .scene-text strong, .full-width-text strong {
-    color: var(--pomp);
-    font-weight: 600;
-  }
-
-  .scene-text em, .full-width-text em {
+  .dramatic-statement {
+    font-family: "Caveat", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-align: center;
     color: var(--rose);
+    line-height: 1.2;
+    padding: 3rem 1rem;
   }
-
-  .full-width-text {
-    justify-content: center;
-    align-items: center;
+  .dramatic-statement p {
+    margin: 0.5rem 0;
   }
-</style>
+  </style>
+  

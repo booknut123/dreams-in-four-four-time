@@ -87,6 +87,14 @@
     credits: {
       enabled: false,
     },
+    caption: {
+      text: "Public data from GreatSchools.org and Niche.com.<br /> Therrell and Walton High are public high schools in the Atlanta metro area.",
+      style: {
+        color: "#5a4e4d",
+        fontSize: "0.8rem",
+        paddingTop: "0.5rem",
+      }
+    }
   };
 </script>
 
@@ -104,10 +112,6 @@
   {#snippet sticky()}
     <figure>
       <Chart {Highcharts} options={chartOptions} />
-      <figcaption>
-        Source: Public data from GreatSchools.org and Niche.com.<br />
-        Therrell and Walton High are public high schools in the Atlanta metro area.
-      </figcaption>
     </figure>
   {/snippet}
 
@@ -169,14 +173,14 @@
       </ArticleText>
       <ArticleText>
         It’s not about ability — it’s about access. It’s about schools being
-        funded by property taxes. It’s about <strong>zip codes</strong> acting like <strong>invisible
-        gates.</strong>
+        funded by property taxes. It’s about <em>zip codes</em> acting like <em>invisible
+        gates.</em>
       </ArticleText>
       <ArticleText>
         Ari studies at night while her mom works the late shift. She watches
         YouTube videos, eager to experiment. She learns how to mix from Reddit
         threads. But all of this — this hustle, this reach — is her making up
-        for a <strong>system that should have met her halfway.</strong>
+        for a <em>system that should have met her halfway.</em>
       </ArticleText>
     </div>
   {/snippet}
@@ -198,18 +202,5 @@
   }
   img {
     width: 48vh;
-  }
-  .scene-text {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--black);
-    max-width: 640px;
-    text-align: left;
-  }
-
-  .scene-text strong {
-    color: var(--rose);
-    font-weight: 600;
   }
 </style>

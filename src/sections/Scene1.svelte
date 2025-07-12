@@ -19,7 +19,7 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        Ari is seventeen, and her dreams are <strong>loud.</strong> Not just loud
+        Ari is seventeen, and her dreams are <em>loud.</em> Not just loud
         in volume — loud in vision. She wants to produce music that makes the world
         stop.
       </ArticleText>
@@ -34,7 +34,7 @@
         imagining her own producer tag.
       </ArticleText>
       <ArticleText>
-        <strong>But dreaming doesn’t pay rent.</strong> And in Ari’s world, dreaming often
+        <em>But dreaming doesn’t pay rent.</em> And in Ari’s world, dreaming often
         comes last — after school, after helping out at home, after figuring out
         how to get to the other side of the city to record with friends.
       </ArticleText>
@@ -45,30 +45,9 @@
 <div class="full-width-text">
   <FullWidth>
     <p>
-      In a country where <strong>opportunity</strong> should meet
-      <strong>talent</strong>, Ari often finds
-      <strong>silence</strong> where there should be <strong>sound</strong>.
+      In a country where <em>opportunity</em> should meet
+      <em>talent</em>, Ari often finds
+      <em>silence</em> where there should be <em>sound</em>.
     </p>
   </FullWidth>
 </div>
-
-<style>
-  .scene-text {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--black);
-    max-width: 640px;
-    text-align: left;
-  }
-
-  .scene-text strong, .full-width-text strong {
-    color: var(--rose);
-    font-weight: 600;
-  }
-
-  .full-width-text {
-    justify-content: center;
-    align-items: center;
-  }
-</style>
