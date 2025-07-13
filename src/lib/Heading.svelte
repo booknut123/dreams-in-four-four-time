@@ -2,6 +2,7 @@
   export let scene = "";
   export let title = "";
   export let subtitle = "";
+  export let source = "";
 </script>
 
 <section class="scene-heading">
@@ -10,6 +11,9 @@
     <h3>{title}</h3>
     {#if subtitle}
       <p>{subtitle}</p>
+    {/if}
+    {#if source}
+      <p>{source}</p>
     {/if}
   </div>
 </section>

@@ -1,4 +1,5 @@
 <script>
+  import BostonAssets from "../lib/images/assets-boston.png";
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
   import Heading from "../lib/Heading.svelte";
@@ -13,8 +14,9 @@
     <ArticleText>
       <Heading
         scene="Scene 5"
-        title="Same stories, Different Cities"
-        subtitle="Generational patterns. Cross-country echoes."
+        title="Same Stories, Different Cities"
+        subtitle="&ldquo;Unless net worth outcomes in communities of color improve, the aggregate magnitude of the wealth disparity will increase.&rdquo;"
+        source="- Duke University and The New School (2015)"
       />
     </ArticleText>
   {/snippet}
@@ -25,23 +27,52 @@
       You’d think things would change across state lines. But Oakland’s numbers mirror Atlanta’s.
     </ArticleText>
     <ArticleText>
-      In Boston, the contrast is even starker. A Boston Federal Reserve Bank 2015 study reported that the median net worth of White households is <strong>$250,000</strong>. For Black households? Just <strong>$8</strong>.
+      In Boston, the contrast is even starker.
     </ArticleText>
     </div>
   {/snippet}
 </Scroller>
 
-<FullWidth>
-  <div class="dramatic-statement">
-    <p>Not $800.</p>
-    <p>Not $80.</p>
-    <p><strong><em>Eight. Dollars.</em></strong></p>
-  </div>
-</FullWidth>
+<Scroller layout="right">
+  {#snippet sticky()}
+      <figure>
+        <img
+          src={BostonAssets}
+          alt="Chart of total assets vs net worth"
+        />
+      </figure>
+  {/snippet}
+
+  {#snippet scrolly()}
+  <div class="scene-text">
+    
+    <ArticleText>
+      A 2015 Boston Federal Reserve Bank study reported that the median net worth of White households is <strong>$250,000</strong>. For Black households? Just <strong>$8</strong>.
+    </ArticleText>
+    <ArticleText>
+      <FullWidth>
+        <div class="dramatic-statement">
+          <p>Not $800.</p>
+          <p>Not $80.</p>
+          <p><strong><em>Eight. Dollars.</em></strong></p>
+        </div>
+      </FullWidth>
+    </ArticleText>
+    <ArticleText>
+      This isn’t about effort. Ari works hard. Her mom works hard. Zora works hard.
+    </ArticleText>
+    <ArticleText>
+      This is about structures — about decades of underinvestment. About redlining and divestment and being told to “just build wealth” in a system designed to extract it.
+    </ArticleText>
+    </div>
+  {/snippet}
+</Scroller>
+
+
 
 <Spacer />
 
-<Scroller layout="left">
+<!-- <Scroller layout="left">
   {#snippet sticky()}
     <ArticleText>
       <Heading scene="" title="" subtitle="“It’s not about effort.”" />
@@ -49,14 +80,9 @@
   {/snippet}
 
   {#snippet scrolly()}
-    <ArticleText>
-      This isn’t about effort. Ari works hard. Her mom works hard. Zora works hard.
-    </ArticleText>
-    <ArticleText>
-      This is about structures — about decades of underinvestment. About redlining and divestment and being told to “just build wealth” in a system designed to extract it.
-    </ArticleText>
+    
   {/snippet}
-</Scroller>
+</Scroller> -->
 
 <div class="full-width-text">
   <FullWidth>
@@ -79,6 +105,9 @@
   }
   .dramatic-statement p {
     margin: 0.5rem 0;
+  }
+  img {
+    width: 75vh;
   }
   </style>
   

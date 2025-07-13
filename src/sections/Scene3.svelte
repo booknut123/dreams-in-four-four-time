@@ -1,7 +1,7 @@
 <script>
-// @ts-nocheck
-  import OaklandBlackPoverty from "../lib/images/black-poverty-oakland.png"
-  import OaklandDebtRatio from "../lib/images/debt-income-oakland.png"
+  // @ts-nocheck
+  import OaklandBlackPoverty from "../lib/images/black-poverty-oakland.png";
+  import OaklandDebtRatio from "../lib/images/debt-income-oakland.png";
 
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
@@ -42,18 +42,20 @@
         },
       },
     },
-    series: [{
-      name: "Expenses",
-      type: "pie",
-      data: [
-        { name: "Rent", y: 1750, color: "#d98c8c" },
-        { name: "Food", y: 380, color: "#7a9376" },
-        { name: "Medical", y: 230, color: "#e8d9c3" },
-        { name: "Transportation", y: 150, color: "#726e97" },
-        { name: "Internet", y: 125, color: "#5a4e4d" },
-        { name: "Deficit", y: 105, color: "#ff6f61" },
-      ],
-    }],
+    series: [
+      {
+        name: "Expenses",
+        type: "pie",
+        data: [
+          { name: "Rent", y: 1750, color: "#d98c8c" },
+          { name: "Food", y: 380, color: "#7a9376" },
+          { name: "Medical", y: 230, color: "#e8d9c3" },
+          { name: "Transportation", y: 150, color: "#726e97" },
+          { name: "Internet", y: 125, color: "#5a4e4d" },
+          { name: "Deficit", y: 105, color: "#ff6f61" },
+        ],
+      },
+    ],
     credits: {
       enabled: false,
     },
@@ -63,12 +65,15 @@
         color: "#5a4e4d",
         fontSize: "0.8rem",
         paddingTop: "0.5rem",
-      }
+      },
+    },
+    alt: {
+      text: "Pie chart of monthly budget exceeding income for an Oakland resident."
     }
   };
 </script>
 
-<Spacer height="20vh"/>
+<Spacer height="20vh" />
 
 <Scroller layout="left">
   {#snippet sticky()}
@@ -76,18 +81,21 @@
       <Heading
         scene="Scene 3"
         title="Rent Eats the Rhythm"
-        subtitle=' "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
-      />
+        subtitle="&ldquo;Urban renewal took significant numbers of African American homes, businesses, and communities without compensation and without much means for growing wealth during the nation&apos;s period of greatest household wealth creation. It led to the serial marginalization of Black citizen interests in housing policy, whose ripple effects are correlated to schools, jobs, health, and social stability.&rdquo;"
+        source="- Troutt (2024)"
+        />
     </ArticleText>
   {/snippet}
 
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        Ari’s spending the summer in Oakland, crashing on an air mattress in her cousin Zora’s tiny apartment. 
+        Ari’s spending the summer in Oakland, crashing on an air mattress in her
+        cousin Zora’s tiny apartment.
       </ArticleText>
       <ArticleText>
-        Zora is 21 and lives in a one-bedroom meant to be temporary — just until she saved enough to finish her degree.
+        Zora is 21 and lives in a one-bedroom meant to be temporary — just until
+        she saved enough to finish her degree.
       </ArticleText>
     </div>
   {/snippet}
@@ -103,17 +111,17 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        Rent is $1,750. Her job pays $18/hr. That's $2,880 before taxes.
+        Rent is $1,750. Her job pays $18/hr. That's $2,880 before taxes.<sup><a href="#source-4" id="ref-4">4</a></sup>
       </ArticleText>
       <ArticleText>
-        But her bills total nearly $3,000.
-        Food, transit, medical costs, loan payments — it all adds up. And then some.
-        </ArticleText>
-        <ArticleText>
-          Zora is falling behind, $100 at a time.
+        But her bills total nearly $3,000. Food, transit, medical costs, loan
+        payments — it all adds up. And then some.
       </ArticleText>
+      <ArticleText>Zora is falling behind, $100 at a time.</ArticleText>
       <ArticleText>
-        The city hums with opportunity - tech hubs, start-ups, studios - but for Zora, <em>budgeting isn’t about saving.</em> It’s about <em>choosing</em> which bill can wait.
+        The city hums with opportunity - tech hubs, start-ups, studios - but for
+        Zora, <em>budgeting isn’t about saving.</em> It’s about
+        <em>choosing</em> which bill can wait.
       </ArticleText>
     </div>
   {/snippet}
@@ -134,36 +142,42 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        In Zora's tract, over <strong>45%</strong> of Black households are living in poverty. In Oakland, the average is <strong>21%</strong>.
+        In Zora's tract, over <strong>45%</strong> of Black households are
+        living in poverty. In Oakland, the average is <strong>21%</strong>.<sup><a href="#source-5" id="ref-5">5</a></sup>
       </ArticleText>
-      <Spacer height="20vh"/>
+      <Spacer height="20vh" />
     </div>
   {/snippet}
 </Scroller>
 
-<Spacer height="20vh"/>
+<Spacer height="20vh" />
 
 <Scroller layout="left">
   {#snippet sticky()}
     <figure>
       <img
-      src={OaklandDebtRatio}
-      alt="The debt to income ratio average in Oakland is 2.15."
-    />
-      </figure>
+        src={OaklandDebtRatio}
+        alt="The debt to income ratio average in Oakland is 2.15."
+      />
+    </figure>
   {/snippet}
 
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        In Alameda County, the <strong>average household owes over twice what they earn each year</strong>.
-        Zora’s not just paying for today — she’s still <em>paying for yesterday</em>. She keeps her boxes stacked neatly by the door - <em>just in case</em>.
+        In Alameda County, the <strong
+          >average household owes over twice what they earn each year</strong
+        ><sup><a href="#source-6" id="ref-6">6</a></sup>. Zora’s not just paying for today — she’s still
+        <em>paying for yesterday</em>. She keeps her boxes stacked neatly by the
+        door - <em>just in case</em>.
       </ArticleText>
       <ArticleText>
-        Ari is learning that gentrification isn’t just a trend — it’s a chokehold.
+        Ari is learning that gentrification isn’t just a trend — it’s a
+        chokehold.
       </ArticleText>
       <ArticleText>
-        In Atlanta, it’s happening too — just slower. For now. Ari, now back home, learns that her mom’s lease was just renewed at $200 more a month.
+        In Atlanta, it’s happening too — just slower. For now. Ari, now back
+        home, learns that her mom’s lease was just renewed at $200 more a month.
       </ArticleText>
     </div>
   {/snippet}
@@ -172,7 +186,9 @@
 <div class="full-width-text">
   <FullWidth>
     <p>
-        If Ari wants a space to <em>create</em>, to <em>build</em>, to <em>grow</em> — she’ll have to fight for <em>every square foot</em>.
+      If Ari wants a space to <em>create</em>, to <em>build</em>, to
+      <em>grow</em>
+      — she’ll have to fight for <em>every square foot</em>.
     </p>
   </FullWidth>
 </div>

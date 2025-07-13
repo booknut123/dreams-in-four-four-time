@@ -11,7 +11,8 @@
       <Heading
         scene="Scene 1"
         title="Quiet Block, Loud Dreams"
-        subtitle=' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
+        subtitle="&ldquo;We must begin to tell our young / There&apos;s a world waiting for you / Yours is the quest that&apos;s just begun&rdquo;"
+        source="- Nina Simone, &ldquo;To Be Young, Gifted and Black&rdquo;"
       />
     </ArticleText>
   {/snippet}
@@ -19,9 +20,8 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        Ari is seventeen, and her dreams are <em>loud.</em> Not just loud
-        in volume — loud in vision. She wants to produce music that makes the world
-        stop.
+        Ari is seventeen, and her dreams are <em>loud.</em> Not just loud in volume
+        — loud in vision. She wants to produce music that makes the world stop.
       </ArticleText>
       <ArticleText>
         She lives in a quiet block on the southwest side of Atlanta, where the

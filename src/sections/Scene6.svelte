@@ -12,9 +12,10 @@
   {#snippet sticky()}
     <ArticleText>
       <Heading
-        scene="Scene 6"
-        title="Echoes of a Future"
-        subtitle=' "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
+        scene=""
+        title="Talent Is Everywhere. Opportunity Should Be, Too."
+        subtitle="&ldquo;Let&apos;s talk about our part / My heart to your heart / Let&apos;s talk about, let&apos;s talk about living&rdquo;"
+        source="- Alicia Keys, &ldquo;We Are Here&rdquo;"
       />
     </ArticleText>
   {/snippet}
@@ -26,11 +27,7 @@
       </ArticleText>
       <ArticleText>
         Imagine Ari walking into a music tech class - one funded as well as suburban schools.
-      </ArticleText>
-      <ArticleText>
-        Imagine her with a mentor in the music business. Imagine her with a laptop that never freezes mid-beat.
-      </ArticleText>
-      <ArticleText>
+        She has a mentor in the music business and a laptop that never freezes mid-beat.
         Imagine if she had time — real time — to create.
       </ArticleText>
       <ArticleText>
@@ -40,19 +37,35 @@
         Ari’s beats are already good. But imagine how loud her dreams could grow - if we actually invested in her, and the millions like her.
       </ArticleText>
       <ArticleText>
-        What happens when we stop just celebrating Black culture - and start funding it?
+        Talent like Ari’s is everywhere —
+      </ArticleText>
+      <ArticleText>
+        in every city, every neighborhood, every home.
+      </ArticleText>
+      <ArticleText>
+        But <em>talent</em> alone isn’t enough. <em>Opportunity</em> must meet it.
+      </ArticleText>
+      <ArticleText>
+        Want to hear Ari’s beats? Want to help the next Ari?
+      </ArticleText>
+      <ArticleText>
+        Learn more about the realities shaping Black futures at the <strong><a href="blackwealthdata.org" target="_blank">Black Wealth Data Center.</a></strong>
+      </ArticleText>
+      <ArticleText>
+        Support local Black-owned businesses.
+      </ArticleText>
+      <ArticleText>
+        Advocate for equitable investment in education, housing, and entrepreneurship.
       </ArticleText>
     </div>
   {/snippet}
 </Scroller>
 
-<!-- <div class="full-width-text">
+<div class="full-width-text">
   <FullWidth>
-    <p>
-      In a country where <strong>opportunity</strong> should meet
-      <strong>talent</strong>, Ari often finds
-      <em>silence</em> where there should be <em>sound</em>.
-    </p>
+    <p>Because when we invest in talent,<br />
+    we don’t just change one life — <br />
+    we change the soundtrack of our future.</p>
   </FullWidth>
-</div> -->
+</div>
 

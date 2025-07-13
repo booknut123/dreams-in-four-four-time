@@ -88,13 +88,13 @@
       enabled: false,
     },
     caption: {
-      text: "Public data from GreatSchools.org and Niche.com.<br /> Therrell and Walton High are public high schools in the Atlanta metro area.",
+      text: "Public data from GreatSchools.org and Niche.com.<sup><a href='#source-1' id='ref-1'>1</a></sup><br /> Therrell and Walton High are public high schools in the Atlanta metro area.",
       style: {
         color: "#5a4e4d",
         fontSize: "0.8rem",
         paddingTop: "0.5rem",
-      }
-    }
+      },
+    },
   };
 </script>
 
@@ -103,7 +103,8 @@
 <Heading
   scene="Scene 2"
   title="Learning in the Margins"
-  subtitle=' "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
+  subtitle="&ldquo;[B]arriers include enrollment in underachieving schools, limited community resources, poverty, and the lack of prosocial and economic opportunities.&rdquo;"
+  source="— St. Mary, Calhoun, Tejada, & Jenson (2018)"
 />
 
 <Spacer />
@@ -122,11 +123,11 @@
         overworked teachers still have time to give.
       </ArticleText>
       <ArticleText>
-        But at her school, fewer than <strong>1 in 5</strong> are meeting proficiency in
-        reading. Only <strong>7%</strong> are proficient in math.
+        But at her school, fewer than <strong>1 in 5</strong> are meeting
+        proficiency in reading. Only <strong>7%</strong> are proficient in math.
       </ArticleText>
       <ArticleText>
-        There's <strong>one</strong> counselor for over <strong>250</strong> students
+        There's <strong>one</strong> counselor for over <strong>250</strong> students<sup><a href="#source-2" id="ref-2">2</a></sup>
         - often just one per grade.
       </ArticleText>
       <ArticleText>
@@ -149,8 +150,8 @@
         alt="Bachelor degree attainment falls under 15% in areas of Southern Atlanta."
       />
       <figcaption>
-        In some tracts of Southern Atlanta with a high concentration of Black residents, only
-        14.2% hold a bachelor’s degree.
+        In some tracts of Southern Atlanta with a high concentration of Black
+        residents, only 14.2% hold a bachelor’s degree.<sup><a href="#source-3" id="ref-3">3</a></sup>
       </figcaption>
     </figure>
     <figure>
@@ -159,7 +160,7 @@
         alt="Bachelor degree attainment for white people surpasses 80.6% in wealthy areas of Northern Atlanta."
       />
       <figcaption>
-        In Northern Atlanta, over 80% of white adults hold a bachelor’s degree.
+        In Northern Atlanta, over 80% of white adults hold a bachelor’s degree.<sup><a href="#source-3" id="ref-3">3</a></sup>
       </figcaption>
     </figure>
   {/snippet}
@@ -167,14 +168,15 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        In Ari's district in Atlanta, which is <strong>98.9% black</strong>, less than <strong>1 in 6</strong>
-        have a college degree. Compare that to over 85% of White adults in
-        wealthier areas of the same city.
+        In Ari's district in Atlanta, which is <strong>98.9% black</strong><sup><a href="#source-3" id="ref-3">3</a></sup>
+        less than <strong>1 in 6</strong>
+        have a college degree. Compare that to over <strong>85%</strong> of White adults in wealthier
+        areas of the same city.
       </ArticleText>
       <ArticleText>
         It’s not about ability — it’s about access. It’s about schools being
-        funded by property taxes. It’s about <em>zip codes</em> acting like <em>invisible
-        gates.</em>
+        funded by property taxes. It’s about <em>zip codes</em> acting like
+        <em>invisible gates.</em>
       </ArticleText>
       <ArticleText>
         Ari studies at night while her mom works the late shift. She watches

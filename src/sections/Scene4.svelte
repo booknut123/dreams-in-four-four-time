@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
 
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
@@ -16,8 +16,8 @@
       type: "column",
       backgroundColor: "transparent",
       style: {
-        fontFamily: "Space Grotesk, sans-serif"
-      }
+        fontFamily: "Space Grotesk, sans-serif",
+      },
     },
     title: {
       text: "Black-Owned Businesses: Atlanta vs National",
@@ -25,60 +25,68 @@
       style: {
         color: "var(--pomp)",
         fontFamily: "DM Serif Text, serif",
-        fontSize: "1.4rem"
-      }
+        fontSize: "1.4rem",
+      },
     },
     xAxis: {
       categories: ["2020", "2021", "2022"],
       labels: {
         style: {
-          color: "var(--wenge)"
-        }
-      }
+          color: "var(--wenge)",
+        },
+      },
     },
     yAxis: {
       min: 0,
       title: {
-        text: "% of Businesses"
+        text: "% of Businesses",
       },
       labels: {
         format: "{value}%",
         style: {
-          color: "var(--wenge)"
-        }
-      }
+          color: "var(--wenge)",
+        },
+      },
     },
     tooltip: {
       shared: true,
-      valueSuffix: "%"
+      valueSuffix: "%",
     },
     plotOptions: {
       column: {
         grouping: true,
-        borderWidth: 0
-      }
+        borderWidth: 0,
+      },
     },
     series: [
       {
         name: "Atlanta",
         type: "column",
         color: "var(--rose)",
-        data: [7.4, 8.8, 11.3]
+        data: [7.4, 8.8, 11.3],
       },
       {
         name: "National",
         type: "column",
         color: "var(--asparagus)",
-        data: [2.4, 2.7, 3.3]
-      }
+        data: [2.4, 2.7, 3.3],
+      },
     ],
     credits: {
-      enabled: false
+      enabled: false,
     },
     legend: {
       itemStyle: {
-        color: "var(--black)"
-      }
+        color: "var(--black)",
+      },
+    },
+    caption: {
+      text:  "Source: LendingTree analysis of 2022 U.S. Census Bureau Annual Business Survey data.",
+      style: {
+        color: "#5a4e4d",
+        fontSize: "0.8rem",
+        paddingTop: "0.5rem",
+      },
     }
   };
 </script>
@@ -92,7 +100,8 @@
       <Heading
         scene="Scene 4"
         title="A Beat Store of Her Own"
-        subtitle=' "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." '
+        subtitle="&ldquo;[A] Black-owned business is 7.3 percentage points more likely than an equivalent White-owned firm to be denied financing.&rdquo;"
+        source="- Barkley and Schweitzer (2023)"
       />
     </ArticleText>
   {/snippet}
@@ -104,7 +113,9 @@
         racking up thousands in monthly sales. She imagines uploading samples,
         branding her sound, building her empire.
       </ArticleText>
-      <ArticleText>She even has a name picked out: <em>808 Blossom</em>.</ArticleText>
+      <ArticleText
+        >She even has a name picked out: <em>808 Blossom</em>.</ArticleText
+      >
       <ArticleText>
         But when she sits down to get started, the barriers stack up fast.
       </ArticleText>
@@ -114,27 +125,36 @@
 
 <Scroller layout="right">
   {#snippet sticky()}
-  <div class="chart-container">
-    <Chart {Highcharts} options={chartOptions} />
-    <p class="caption">
-      Source: LendingTree analysis of 2022 U.S. Census Bureau Annual Business Survey data.
-    </p>
-  </div>
+    <div class="chart-container">
+      <Chart {Highcharts} options={chartOptions} />
+    </div>
   {/snippet}
 
   {#snippet scrolly()}
-    <div class = "scene-text">
+    <div class="scene-text">
       <ArticleText>
-        It costs <strong>$100</strong> just to register a business in Georgia.
+        It costs <strong>$100</strong><sup><a href="#source-7" id="ref-7">7</a></sup> just to register a business in Georgia.
       </ArticleText>
       <ArticleText>
-        Then there’s the domain names, software licenses, marketing tools - not to mention gear.
+        Then there’s the domain names, software licenses, marketing tools — not
+        to mention gear.
+      </ArticleText>
+      <ArticleText>Ari thinks about applying for a loan.</ArticleText>
+      <ArticleText>
+        But she doesn’t have credit. Her mom doesn’t either. And rejection feels
+        inevitable.
+      </ArticleText>
+      <ArticleText>She’s not wrong.</ArticleText>
+      <ArticleText>
+        A Black-owned business is over <strong>7%</strong><sup><a href="#source-8" id="ref-8">8</a></sup> more likely to be denied
+        financing than a comparable White-owned one.
       </ArticleText>
       <ArticleText>
-        Loans? Credit? She doesn't have any. And neither does her mom.
+        And that’s just among those who apply. Many never even try — discouraged
+        by a <em>system that never loaned them much faith</em>.
       </ArticleText>
       <ArticleText>
-        In Atlanta, despite being a majority Black city, only <strong>11.3%</strong> of businesses are Black-owned.
+        In Atlanta, despite being a majority Black city, only <strong>11.3%</strong><sup><a href="#source-9" id="ref-9">9</a></sup> of businesses are Black-owned.
       </ArticleText>
       <ArticleText>
         Ari’s not asking for a shortcut — just a runway.
@@ -146,7 +166,8 @@
 <div class="full-width-text">
   <FullWidth>
     <p>
-      <em>Talent</em> without <em>capital</em> is like a <em>song</em> without a <em>speaker</em>. Who’s going to hear it?
+      <em>Talent</em> without <em>capital</em> is like a <em>song</em> without a
+      <em>speaker</em>. Who’s going to hear it?
     </p>
   </FullWidth>
 </div>

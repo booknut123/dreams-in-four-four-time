@@ -45,3 +45,14 @@
   justify-content: center;
   align-items: center;
 }
+
+sup {
+  font-size: 50%;
+}
+
+.source-list li[id],
+.subtitle-list li[id],
+[id^="ref-"] {
+  scroll-margin-top: 40vh; /* or whatever height you want */
+}
+
