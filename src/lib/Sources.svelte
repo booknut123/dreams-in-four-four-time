@@ -1,7 +1,7 @@
 <section id="sources" class="sources">
   <h3>Scene Subtitles</h3>
   <ol class="subtitle-list">
-    <li>Scene 1 - Simone, Nina. To Be Young, Gifted, and Black. 1969.</li>
+    <li>Scene 1 - Simone, Nina. To Be Young, Gifted, and Black. 1970.</li>
     <li>Scene 2 - St. Mary, Jason, et al. (2018).</li>
     <li>Scene 3 - Troutt, David Dante. (2024).</li>
     <li>Scene 4 - Barkley, Brett, and Mark Schweitzer. (2023).</li>

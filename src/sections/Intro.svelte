@@ -1,16 +1,16 @@
 <script>
-  import Spacer from '../lib/Spacer.svelte';
+  import Spacer from "../lib/Spacer.svelte";
 </script>
 
 <section class="intro">
   <div class="intro-content">
-    <h1>Dreams in Four-Four Time</h1>
-    <p>
-      A scrollytelling journey following Ari — a 17-year-old aspiring music
-      producer — as she navigates the systemic barriers shaping Black futures in
+    <h1 class="title">Dreams in Four-Four Time</h1>
+    <p class="subtitle">
+      A scrollytelling journey following Ari - a 17-year-old aspiring music
+      producer - as she navigates the systemic barriers shaping Black futures in
       America.
     </p>
-    <h1>↓</h1>
+    <h1 class="scroll-indicator">↓</h1>
     <p></p>
     <p></p>
   </div>
@@ -54,17 +54,47 @@
     padding: 2rem;
   }
 
-  .intro-content h1 {
+  .title {
     font-family: "Caveat", sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--pomp);
-    text-shadow: 1px 1px 2px var(--black);
+    text-shadow:
+      1px 1px 2px var(--black),
+      0 0 30px rgb(255, 217, 0);
     margin-bottom: 1rem;
   }
 
-  .intro-content p {
+  .subtitle {
     font-size: 1.3rem;
     color: var(--black);
     line-height: 1.6;
+  }
+
+  .scroll-indicator {
+    font-family: "Caveat", sans-serif;
+    font-size: clamp(2.5rem, 3vw, 4rem);
+    color: var(--pomp);
+    margin-bottom: 1rem;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0) translateX(-50%);
+    }
+    40% {
+      transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+      transform: translateY(-5px) translateX(-50%);
+    }
   }
 </style>

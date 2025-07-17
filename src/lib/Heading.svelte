@@ -20,11 +20,6 @@
 
 <style>
   .scene-heading {
-    padding: 1.5rem 2rem;
-    text-align: center;
-  }
-
-  .scene-heading {
   background-color: #e3dede;
   border: 1px solid var(--asparagus);
   border-radius: 12px;
@@ -41,17 +36,18 @@
   } */
 
   h2 {
-    font-family: "DM Serif Text", serif;
+    font-family: "Courier New", monospace;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--asparagus);
   }
 
   h3 {
-    font-family: "Caveat", serif;
+    font-family: "Caveat", sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--pomp);
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   p {
