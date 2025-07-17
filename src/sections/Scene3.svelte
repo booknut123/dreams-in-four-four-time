@@ -68,8 +68,8 @@
       },
     },
     alt: {
-      text: "Pie chart of monthly budget exceeding income for an Oakland resident."
-    }
+      text: "Pie chart of monthly budget exceeding income for an Oakland resident.",
+    },
   };
 </script>
 
@@ -79,11 +79,13 @@
   {#snippet sticky()}
     <ArticleText>
       <Heading
-        scene="Scene 3"
+        scene="// Track 3"
         title="Rent Eats the Rhythm"
-        subtitle="&ldquo;Urban renewal took significant numbers of African American homes, businesses, and communities without compensation and without much means for growing wealth during the nation&apos;s period of greatest household wealth creation. It led to the serial marginalization of Black citizen interests in housing policy, whose ripple effects are correlated to schools, jobs, health, and social stability.&rdquo;"
+        subtitle="&ldquo;Urban renewal took significant numbers of African American homes, businesses, and
+                  communities without compensation and without much means for growing wealth during the nation&apos;s
+                  period of greatest household wealth creation.&rdquo;"
         source="- Troutt (2024)"
-        />
+      />
     </ArticleText>
   {/snippet}
 
@@ -94,7 +96,7 @@
         cousin Zora’s tiny apartment.
       </ArticleText>
       <ArticleText>
-        Zora is 21 and lives in a one-bedroom meant to be temporary — just until
+        Zora is 21 and lives in a one-bedroom meant to be temporary - just until
         she saved enough to finish her degree.
       </ArticleText>
     </div>
@@ -111,11 +113,13 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        Rent is $1,750. Her job pays $18/hr. That's $2,880 before taxes.<sup><a href="#source-4" id="ref-4">4</a></sup>
+        Rent is $1,750. Her job pays $18/hr. That's $2,880 before taxes.<sup
+          ><a href="#source-4" id="ref-4">4</a></sup
+        >
       </ArticleText>
       <ArticleText>
         But her bills total nearly $3,000. Food, transit, medical costs, loan
-        payments — it all adds up. And then some.
+        payments - it all adds up. And then some.
       </ArticleText>
       <ArticleText>Zora is falling behind, $100 at a time.</ArticleText>
       <ArticleText>
@@ -143,7 +147,9 @@
     <div class="scene-text">
       <ArticleText>
         In Zora's tract, over <strong>45%</strong> of Black households are
-        living in poverty. In Oakland, the average is <strong>21%</strong>.<sup><a href="#source-5" id="ref-5">5</a></sup>
+        living in poverty. In Oakland, the average is <strong>21%</strong>.<sup
+          ><a href="#source-5" id="ref-5">5</a></sup
+        >
       </ArticleText>
       <Spacer height="20vh" />
     </div>
@@ -167,16 +173,20 @@
       <ArticleText>
         In Alameda County, the <strong
           >average household owes over twice what they earn each year</strong
-        ><sup><a href="#source-6" id="ref-6">6</a></sup>. Zora’s not just paying for today — she’s still
-        <em>paying for yesterday</em>. She keeps her boxes stacked neatly by the
-        door - <em>just in case</em>.
+        ><sup><a href="#source-6" id="ref-6">6</a></sup>. Zora’s not just paying
+        for today - she’s still
+        <em>paying for yesterday</em>.
       </ArticleText>
+      <div class="thought">
+        <ArticleText>
+          <i
+            >Zora keeps her boxes stacked neatly by the door. &ldquo;Just in case,&rdquo;
+            she says. But we both know it's not really a choice.</i
+          >
+        </ArticleText>
+      </div>
       <ArticleText>
-        Ari is learning that gentrification isn’t just a trend — it’s a
-        chokehold.
-      </ArticleText>
-      <ArticleText>
-        In Atlanta, it’s happening too — just slower. For now. Ari, now back
+        In Atlanta, it’s happening too - just slower. For now. Ari, now back
         home, learns that her mom’s lease was just renewed at $200 more a month.
       </ArticleText>
     </div>
@@ -188,7 +198,7 @@
     <p>
       If Ari wants a space to <em>create</em>, to <em>build</em>, to
       <em>grow</em>
-      — she’ll have to fight for <em>every square foot</em>.
+      - she’ll have to fight for <em>every square foot</em>.
     </p>
   </FullWidth>
 </div>
