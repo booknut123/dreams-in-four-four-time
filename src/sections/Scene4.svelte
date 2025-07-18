@@ -259,9 +259,9 @@
 
 <style>
   .interactive-element {
-    font-family: "Space Grotesk", sans-serif;
+    border: none;
+    box-shadow: none;
   }
-  
   h3 {
     margin-bottom: 15px;
     font-size: 1.3rem;
