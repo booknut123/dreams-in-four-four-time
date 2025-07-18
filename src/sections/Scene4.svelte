@@ -10,6 +10,7 @@
   import * as Highcharts from "highcharts";
   import "highcharts/modules/exporting";
   import { Chart } from "@highcharts/svelte";
+  import FullWidthText from "../lib/FullWidthText.svelte";
 
   const chartOptions = {
     chart: {
@@ -81,14 +82,51 @@
       },
     },
     caption: {
-      text:  "Source: LendingTree analysis of 2022 U.S. Census Bureau Annual Business Survey data.",
+      text: "Source: LendingTree analysis of 2022 U.S. Census Bureau Annual Business Survey data.",
       style: {
         color: "#5a4e4d",
         fontSize: "0.8rem",
         paddingTop: "0.5rem",
       },
-    }
+    },
   };
+
+  let selectedItems = [];
+  let remainingBudget = 250;
+
+  const studioItems = [
+    { name: "🔌 Audio Interface", cost: 100, essential: false },
+    { name: "💻 DAW License (free)", cost: 0, essential: true },
+    { name: "💻 DAW License (full features)", cost: 300, essential: false },
+    { name: "📱 Domain & Hosting", cost: 60, essential: false },
+    { name: "💻 Fully Working Laptop", cost: 300, essential: false },
+    { name: "🎯 Marketing Tools", cost: 50, essential: false },
+    { name: "🎤 Microphone", cost: 150, essential: false },
+    { name: "🎹 MIDI Controller", cost: 150, essential: true },
+    { name: "🎧 Studio Headphones", cost: 80, essential: true },
+    { name: "🔊 Studio Monitors", cost: 180, essential: false },
+  ];
+
+  function toggleStudioItem(index) {
+    const item = studioItems[index];
+
+    if (selectedItems.includes(index)) {
+      // Remove item
+      selectedItems = selectedItems.filter((i) => i !== index);
+      remainingBudget += item.cost;
+    } else {
+      // Add item if budget allows
+      if (remainingBudget >= item.cost) {
+        selectedItems = [...selectedItems, index];
+        remainingBudget -= item.cost;
+      }
+    }
+  }
+
+  $: essentialItems = selectedItems.filter((i) => studioItems[i].essential);
+  $: allEssentialsSelected =
+    essentialItems.length ===
+    studioItems.filter((item) => item.essential).length;
 </script>
 
 <Spacer />
@@ -98,8 +136,8 @@
   {#snippet sticky()}
     <ArticleText>
       <Heading
-        scene="Scene 4"
-        title="A Beat Store of Her Own"
+        scene="// Track 4"
+        title="Beat Store Blues"
         subtitle="&ldquo;[A] Black-owned business is 7.3 percentage points more likely than an equivalent White-owned firm to be denied financing.&rdquo;"
         source="- Barkley and Schweitzer (2023)"
       />
@@ -108,14 +146,18 @@
 
   {#snippet scrolly()}
     <div class="scene-text">
+      <div class="thought">
+        <ArticleText>
+          I even have a name picked out: <em>808 Blossom</em>. I can see it all
+          - the logo, the website, the first beat that goes viral. But when I
+          sit down to actually start...
+        </ArticleText>
+      </div>
       <ArticleText>
         Ari wants to sell beats online. She’s seen other producers on YouTube
         racking up thousands in monthly sales. She imagines uploading samples,
         branding her sound, building her empire.
       </ArticleText>
-      <ArticleText
-        >She even has a name picked out: <em>808 Blossom</em>.</ArticleText
-      >
       <ArticleText>
         But when she sits down to get started, the barriers stack up fast.
       </ArticleText>
@@ -133,10 +175,12 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        It costs <strong>$100</strong><sup><a href="#source-7" id="ref-7">7</a></sup> just to register a business in Georgia.
+        It costs <strong>$100</strong><sup
+          ><a href="#source-7" id="ref-7">7</a></sup
+        > just to register a business in Georgia.
       </ArticleText>
       <ArticleText>
-        Then there’s the domain names, software licenses, marketing tools — not
+        Then there’s the domain names, software licenses, marketing tools - not
         to mention gear.
       </ArticleText>
       <ArticleText>Ari thinks about applying for a loan.</ArticleText>
@@ -146,50 +190,145 @@
       </ArticleText>
       <ArticleText>She’s not wrong.</ArticleText>
       <ArticleText>
-        A Black-owned business is over <strong>7%</strong><sup><a href="#source-8" id="ref-8">8</a></sup> more likely to be denied
-        financing than a comparable White-owned one.
+        A Black-owned business is over <strong>7%</strong><sup
+          ><a href="#source-8" id="ref-8">8</a></sup
+        > more likely to be denied financing than a comparable White-owned one.
       </ArticleText>
       <ArticleText>
-        And that’s just among those who apply. Many never even try — discouraged
+        And that’s just among those who apply. Many never even try - discouraged
         by a <em>system that never loaned them much faith</em>.
       </ArticleText>
       <ArticleText>
-        In Atlanta, despite being a majority Black city, only <strong>11.3%</strong><sup><a href="#source-9" id="ref-9">9</a></sup> of businesses are Black-owned.
+        In Atlanta, despite being a majority Black city, only <strong
+          >11.3%</strong
+        ><sup><a href="#source-9" id="ref-9">9</a></sup> of businesses are Black-owned.
       </ArticleText>
-      <ArticleText>
-        Ari’s not asking for a shortcut — just a runway.
-      </ArticleText>
+      <div class="thought">
+        <ArticleText>
+          I'm not asking for a shortcut - just a runway. <em>Talent</em> without <em>capital</em> is like a <em>song</em> without a
+      <em>speaker</em>. Who’s going to hear it?
+        </ArticleText>
+      </div>
     </div>
   {/snippet}
 </Scroller>
 
-<div class="full-width-text">
-  <FullWidth>
-    <p>
-      <em>Talent</em> without <em>capital</em> is like a <em>song</em> without a
-      <em>speaker</em>. Who’s going to hear it?
-    </p>
-  </FullWidth>
-</div>
+<FullWidthText>
+  <div class="interactive-element">
+    <h3>Pack Ari's Digital Studio</h3>
+    <p>Ari has scraped together money by tutoring younger students! Help her choose what she can afford with her $250 budget:</p>
+
+    <div class="budget-display">
+      <strong>Budget Remaining: ${remainingBudget}</strong>
+    </div>
+
+    <div class="studio-simulator">
+      {#each studioItems as item, index}
+        <button
+          class="studio-item"
+          class:selected={selectedItems.includes(index)}
+          class:disabled={!selectedItems.includes(index) &&
+            remainingBudget < item.cost}
+          disabled={!selectedItems.includes(index) &&
+            remainingBudget < item.cost}
+          on:click={() => toggleStudioItem(index)}
+        >
+          <div>{item.name}</div>
+          <div>${item.cost}</div>
+          {#if item.essential}
+            <div class="essential-tag">Essential</div>
+          {/if}
+        </button>
+      {/each}
+    </div>
+
+    <div class="studio-result">
+      {#if allEssentialsSelected}
+        <div class="success-message">
+          ✅ <strong>Bare minimum:</strong> Great! Ari can start making beats, but she's missing key tools for professional production.
+        </div>
+      {:else}
+        <div class="warning-message">
+          ⚠️ <strong>Missing essentials:</strong> Ari's creativity is limited without
+          core equipment.
+        </div>
+      {/if}
+    </div>
+  </div>
+</FullWidthText>
 
 <style>
-  .full-width-text {
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
+  .interactive-element {
+    border: none;
+    box-shadow: none;
+  }
+  h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
   }
 
-  .chart-container {
-    max-width: 700px;
-    margin: 0 auto;
+  .interactive-element p, .studio-result {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: large;
+  }
+
+  .budget-display {
+    background: var(--bone);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid rgba(255, 215, 0, 0.3);
     text-align: center;
-    padding: 2rem 1rem;
+    font-size: large;
   }
 
-  .caption {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.9rem;
-    color: var(--wenge);
-    margin-top: 0.5rem;
+  .studio-simulator {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .studio-item {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-family: inherit;
+  }
+
+  .studio-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .studio-item.selected {
+    background: rgba(255, 215, 0, 0.1);
+  }
+
+  .studio-item:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .essential-tag {
+    font-size: 0.7rem;
+    margin-top: 5px;
+  }
+
+  .success-message {
+    padding: 15px;
+    background: rgba(74, 222, 128, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+  }
+
+  .warning-message {
+    padding: 15px;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(251, 191, 36, 0.3);
   }
 </style>

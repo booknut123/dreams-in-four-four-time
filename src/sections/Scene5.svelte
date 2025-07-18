@@ -1,20 +1,40 @@
 <script>
-  import BostonAssets from "../lib/images/assets-boston.png";
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
   import Heading from "../lib/Heading.svelte";
   import FullWidth from "../lib/FullWidthText.svelte";
   import Spacer from "../lib/Spacer.svelte";
+
+  let guess = "";
+  let showResult = false;
+  let guessNumber = 0;
+  let userGuessed = false;
+
+  function revealWealth() {
+    if (guess) {
+      showResult = true;
+      userGuessed = true;
+      guessNumber = parseInt(guess);
+    }
+  }
+
+  function resetGuess() {
+    guess = "";
+    showResult = false;
+    guessNumber = 0;
+    userGuessed = false;
+  }
 </script>
 
-<Spacer /> <Spacer />
+<Spacer />
+<Spacer />
 
 <Scroller layout="right">
   {#snippet sticky()}
     <ArticleText>
       <Heading
-        scene="Scene 5"
-        title="Same Stories, Different Cities"
+        scene="// Track 5"
+        title="Same Stories, Different Cities (Remix)"
         subtitle="&ldquo;Unless net worth outcomes in communities of color improve, the aggregate magnitude of the wealth disparity will increase.&rdquo;"
         source="- Duke University and The New School (2015)"
       />
@@ -22,67 +42,81 @@
   {/snippet}
 
   {#snippet scrolly()}
-  <div class="scene-text">
-    <ArticleText>
-      You’d think things would change across state lines. But Oakland’s numbers mirror Atlanta’s.
-    </ArticleText>
-    <ArticleText>
-      In Boston, the contrast is even starker.
-    </ArticleText>
-    </div>
-  {/snippet}
-</Scroller>
+    <div class="scene-text">
+      <ArticleText>
+        You'd think things would change across state lines. But Oakland's
+        numbers mirror Atlanta's.
+      </ArticleText>
+      <ArticleText>In Boston, the contrast is even starker.</ArticleText>
+      <ArticleText>
+        <div class="interactive-element">
+          <h3>Guess the Wealth Gap</h3>
+          <p>
+            A 2015 Boston Federal Reserve Bank study found that the median net
+            worth of White households is $250,000.
+          </p>
+          <p>
+            <strong
+              >What do you think the median net worth is for Black households in
+              Boston?</strong
+            >
+          </p>
+          <div class="guess-input">
+            <input
+              type="number"
+              bind:value={guess}
+              placeholder="Enter amount"
+              disabled={showResult}
+            />
 
-<Scroller layout="right">
-  {#snippet sticky()}
-      <figure>
-        <img
-          src={BostonAssets}
-          alt="Chart of total assets vs net worth"
-        />
-      </figure>
-  {/snippet}
+            {#if !showResult}
+              <div class="button-row">
+                <button on:click={revealWealth}>Submit Guess</button>
+                <button
+                  on:click={() => {
+                    showResult = true;
+                    userGuessed = false;
+                  }}>I’d Rather Not Guess</button
+                >
+              </div>
+            {:else}
+              <button on:click={resetGuess}>⟳</button>
+            {/if}
+          </div>
 
-  {#snippet scrolly()}
-  <div class="scene-text">
-    
-    <ArticleText>
-      A 2015 Boston Federal Reserve Bank study reported that the median net worth of White households is <strong>$250,000</strong>. For Black households? Just <strong>$8</strong>.
-    </ArticleText>
-    <ArticleText>
-      <FullWidth>
-        <div class="dramatic-statement">
-          <p>Not $800.</p>
-          <p>Not $80.</p>
-          <p><strong><em>Eight. Dollars.</em></strong></p>
+          {#if showResult}
+            <div class="wealth-result">
+              <div
+                style="margin-top: 20px; padding: 20px; border-radius: 10px;"
+              >
+                {#if userGuessed}
+                  <p>
+                    <strong>Your guess:</strong> ${guessNumber.toLocaleString()}
+                  </p>
+                {:else}
+                  <p><em>You chose not to guess. Totally fair.</em></p>
+                {/if}
+                <p>
+                  <strong>Actual median net worth for Black households:</strong>
+                  <span style="font-size: 1.5rem;">$8</span>
+                </p>
+                <p style="margin-top: 10px; opacity: 0.9;">
+                  Not $800. Not $80. Eight dollars.
+                </p>
+              </div>
+            </div>
+          {/if}
         </div>
-      </FullWidth>
-    </ArticleText>
-    <ArticleText>
-      This isn’t about effort. Ari works hard. Her mom works hard. Zora works hard.
-    </ArticleText>
-    <ArticleText>
-      This is about structures — about decades of underinvestment. About redlining and divestment and being told to “just build wealth” in a system designed to extract it.
-    </ArticleText>
+      </ArticleText>
+      <div class="thought">
+        <ArticleText>
+          This isn't about effort. I work hard. Mom works hard. Zora works hard.
+          This is about structures - about decades of underinvestment.
+      </ArticleText>
+      </div>
     </div>
   {/snippet}
 </Scroller>
-
-
-
-<Spacer />
-
-<!-- <Scroller layout="left">
-  {#snippet sticky()}
-    <ArticleText>
-      <Heading scene="" title="" subtitle="“It’s not about effort.”" />
-    </ArticleText>
-  {/snippet}
-
-  {#snippet scrolly()}
-    
-  {/snippet}
-</Scroller> -->
 
 <div class="full-width-text">
   <FullWidth>
@@ -95,19 +129,69 @@
 </div>
 
 <style>
-  .dramatic-statement {
-    font-family: "Caveat", sans-serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    text-align: center;
-    color: var(--rose);
-    line-height: 1.2;
-    padding: 3rem 1rem;
+  .guess-input {
+    margin: 20px 0;
   }
-  .dramatic-statement p {
-    margin: 0.5rem 0;
+
+  .guess-input input {
+    background: white;
+    border: 1px solid var(--black);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: inherit;
   }
-  img {
-    width: 75vh;
+
+  .guess-input input:disabled {
+    background: #f5f5f5;
+    color: #666;
   }
-  </style>
-  
+
+  .guess-input button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+
+  .guess-input button:hover {
+    transform: translateY(-2px);
+  }
+
+  .wealth-result {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .button-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  @media (min-width: 480px) {
+    .button-row {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  .button-row button {
+    flex: 1;
+    background: var(--rose, #ff5f56);
+    color: white;
+  }
+</style>

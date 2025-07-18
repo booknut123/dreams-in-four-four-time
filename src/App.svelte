@@ -1,4 +1,5 @@
 <script>
+  import Audio from "./lib/Audio.svelte";
   import Intro from "./sections/Intro.svelte";
   import Scene1 from "./sections/Scene1.svelte"
   import Scene2 from "./sections/Scene2.svelte";
@@ -15,6 +16,7 @@
 </svelte:head>
 
 <main>
+  <Audio />
   <Intro />
   <Scene1 />
   <Scene2 />

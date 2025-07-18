@@ -10,7 +10,10 @@
       producer - as she navigates the systemic barriers shaping Black futures in
       America.
     </p>
+<<<<<<< HEAD
     <p>Make sure to turn on sound!</p>
+=======
+>>>>>>> bfe5d9637c1e316edad953b06d5342a77a3a0e04
     <h1 class="scroll-indicator">↓</h1>
     <p></p>
     <p></p>
