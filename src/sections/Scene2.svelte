@@ -21,6 +21,7 @@
       style: {
         fontFamily: "Space Grotesk",
       },
+      marginLeft: 175, // Adjust as needed
     },
     title: {
       text: "Academic Performance Comparison",
@@ -34,12 +35,15 @@
     xAxis: {
       categories: ["Math Proficiency", "Reading Proficiency"],
       labels: {
+        overflow: "justify",
+        reserveSpace: true,
         style: {
           color: "var(--pomp)",
           fontSize: "1rem",
         },
       },
     },
+
     yAxis: {
       min: 0,
       max: 100,
@@ -201,7 +205,6 @@
   figure {
     margin-top: 2rem;
     text-align: center;
-    width: 70%;
   }
   figcaption {
     font-family: "Space Grotesk", sans-serif;
