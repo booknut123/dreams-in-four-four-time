@@ -1,17 +1,17 @@
 <section id="sources" class="sources">
-  <h3>Scene Subtitles</h3>
+  <h3>Track Subtitles</h3>
   <ol class="subtitle-list">
-    <li>Scene 1 - Simone, Nina. To Be Young, Gifted, and Black. 1969.</li>
-    <li>Scene 2 - St. Mary, Jason, et al. (2018).</li>
-    <li>Scene 3 - Troutt, David Dante. (2024).</li>
-    <li>Scene 4 - Barkley, Brett, and Mark Schweitzer. (2023).</li>
-    <li>Scene 5 - Muñoz, Ana Patricia, et al. (2015)</li>
-    <li>Scene 6 - Keys, Alicia. We Are Here. 2014.</li>
+    <li>Track 1 - Simone, Nina. To Be Young, Gifted, and Black. 1970.</li>
+    <li>Track 2 - St. Mary, Jason, et al. (2018).</li>
+    <li>Track 3 - Troutt, David Dante. (2024).</li>
+    <li>Track 4 - Barkley, Brett, and Mark Schweitzer. (2023).</li>
+    <li>Track 5 - Muñoz, Ana Patricia, et al. (2015)</li>
+    <li>Track 6 - Keys, Alicia. We Are Here. 2014.</li>
   </ol>
 
-  <h3>Scene 2</h3>
+  <h3>Track 2</h3>
   <p>
-    Scene Quote: St. Mary, Jason, et al. “Perceptions of Academic Achievement
+    Quote: St. Mary, Jason, et al. “Perceptions of Academic Achievement
     and Educational Opportunities Among Black and African American Youth.” Child
     & Adolescent Social Work Journal, vol. 35, no. 5, Oct. 2018, pp. 499–509.
     <a href="https://doi.org/10.1007/s10560-018-0538-4" target="_blank"
@@ -41,9 +41,9 @@
     </li>
   </ol>
 
-  <h3>Scene 3</h3>
+  <h3>Track 3</h3>
   <p>
-    Scene Quote: Troutt, David Dante. “Urban Renewal’s Grandchildren: Remedying
+    Quote: Troutt, David Dante. “Urban Renewal’s Grandchildren: Remedying
     the Persistent Effects of Post-War Race Planning.” Fordham Urban Law
     Journal, vol. 52, no. 1, Oct. 2024, p. COV3.
     <a
@@ -83,9 +83,9 @@
     </li>
   </ol>
 
-  <h3>Scene 4</h3>
+  <h3>Track 4</h3>
   <p>
-    Scene Quote: Barkley, Brett, and Mark Schweitzer. “Credit Availability for
+    Quote: Barkley, Brett, and Mark Schweitzer. “Credit Availability for
     Minority Business Owners in an Evolving Credit Environment.” Economic
     Development Quarterly, vol. 37, no. 3, Aug. 2023, pp. 230–42.
     <a href="https://doi.org/10.1177/08912424231168331" target="_blank"
@@ -119,7 +119,7 @@
     </li>
   </ol>
 
-  <h3>Scene 5</h3>
+  <h3>Track 5</h3>
   <p>
     Source: Federal Reserve Bank of Boston. The Color of Wealth in Boston. 2015.
     <a
@@ -133,6 +133,9 @@
     Original template from Jasmine Samras at Kode with Klossy. View <a
       href="https://github.com/jasminesamra/kwk-scrollytelling-template">here</a
     >.
+  </p>
+  <p class="template-credit">
+    Music from a public Youtube playlist. View <a href="https://www.youtube.com/playlist?list=PLhUDPsGW64inBr49C0xmZ7oM3G3DeXXPQ">here</a>
   </p>
 </section>
 
