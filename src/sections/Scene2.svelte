@@ -201,6 +201,7 @@
   figure {
     margin-top: 2rem;
     text-align: center;
+    width: 70%;
   }
   figcaption {
     font-family: "Space Grotesk", sans-serif;
