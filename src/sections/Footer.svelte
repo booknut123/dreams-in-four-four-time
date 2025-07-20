@@ -47,17 +47,5 @@
       margin-top: 1rem;
       font-weight: bold;
     }
-  
-    ul {
-      margin-top: 0.5rem;
-      padding-left: 1rem;
-      text-align: left;
-    }
-  
-    .footer-license {
-      margin-top: 1rem;
-      opacity: 0.7;
-      font-size: 0.75rem;
-    }
   </style>
   

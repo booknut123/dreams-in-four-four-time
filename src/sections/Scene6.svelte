@@ -7,6 +7,7 @@
 
   function updateReality() {
             const checkboxes = document.querySelectorAll('#reality-toggles input[type="checkbox"]');
+            // @ts-ignore
             const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
             const result = document.getElementById('reality-result');
             

@@ -4,80 +4,77 @@
 
 <div class="wrapper {layout}">
   <div class="sticky">
-    {@render sticky()}
+      {@render sticky()}
   </div>
 
   <div class="scrolly">
-    {@render scrolly()}
+      {@render scrolly()}
   </div>
 </div>
 
 <style>
   .wrapper {
     padding: 0 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-/* 
-    border-style: solid;
-    border-color: #4096fa; */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
   }
 
   .left .scrolly {
-    order: 0;
+      order: 0;
   }
   .left .sticky {
-    order: 1;
+      order: 1;
   }
 
   .right .scrolly {
-    order: 1;
+      order: 1;
   }
   .right .sticky {
-    order: 0;
+      order: 0;
   }
 
   .sticky,
   .scrolly {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1; /* Allows growing, shrinking */
+      display: flex;
+      flex-direction: column;
+      flex: 1 1; /* Allows growing, shrinking */
   }
 
   .sticky {
-    position: sticky;
-    top: 50vh;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
+      position: sticky;
+      top: 50vh;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
     flex-shrink: 0;
     max-height: 80vh;
   }
 
   .scrolly {
-    z-index: 1;
+      z-index: 1;
   }
 
   @media (max-width: 768px) {
-    .wrapper {
-      flex-direction: column;
-      padding: 2rem 1rem;
-      width: 100vw;
-    }
+      .wrapper {
+          flex-direction: column;
+          padding: 2rem 1rem;
+          width: 100vw;
+      }
 
-    .sticky,
-    .scrolly {
-      flex: 1 1 auto;
-      min-width: 100%;
-      position: static; /* remove sticky on mobile */
-      transform: none;
-    }
+      .sticky,
+      .scrolly {
+          flex: 1 1 auto;
+          min-width: 100%;
+          position: static; /* remove sticky on mobile */
+          transform: none;
+      }
 
-    .sticky {
-      margin-bottom: 2rem;
-    }
+      .sticky {
+          margin-bottom: 2rem;
+      }
   }
 </style>
