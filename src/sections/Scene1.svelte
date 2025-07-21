@@ -48,10 +48,8 @@
       <div class="visual-content">
         <div id="ari-studio" class="visual-content-container">
           <div class="visual-content-title">Ari's Bedroom Studio</div>
-          <div style="text-align: center; font-size: 3rem; margin: 20px 0;">
-            🎹
-          </div>
-          <p style="text-align: center; opacity: 0.8;">
+          <div class="visual-content-emoji">🎹</div>
+          <p class="visual-content-caption">
             Years-old beat pad, barely-held-together-laptop, notebook, dreams
           </p>
         </div>
@@ -88,11 +86,10 @@
 <style>
   .visual-content {
     border: 5px solid #bdb3b2;
-    padding: 2rem;
+    padding: 2.5rem;
     margin: 2rem auto;
     max-width: 800px;
     box-shadow: 2px 4px 10px var(--asparagus);
-    padding: 40px;
     border-radius: 15px;
   }
 
@@ -108,5 +105,16 @@
   .visual-content p {
     font-size: 1.2rem;
     color: var(--rose);
+  }
+
+  .visual-content-emoji,
+  .visual-content-caption {
+    text-align: center;
+  }
+
+  .visual-content-emoji {
+    font-size: 3rem;
+    margin: 20px 0;
+    opacity: 0.8;
   }
 </style>
