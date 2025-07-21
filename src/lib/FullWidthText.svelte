@@ -19,12 +19,13 @@
       background-color: #e3dede;
       border: 2px solid var(--wenge);
       border-radius: 16px;
+      box-shadow: 4px 4px 10px rgb(90, 78, 77);
+
       padding: 2rem;
       max-width: 700px;
-      width: 100%;
       text-align: center;
-      box-shadow: 4px 4px 10px rgba(90, 78, 77, 0.1);
-      font-family: "Caveat", cursive;
+      
+      font-family: "Caveat", sans-serif;
       font-size: clamp(1.8rem, 3vw, 2.5rem);
       color: var(--wenge);
       line-height: 1.4;

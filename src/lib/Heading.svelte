@@ -13,27 +13,21 @@
       <p>{subtitle}</p>
     {/if}
     {#if source}
-      <p>{source}</p>
+      <p><cite>{source}</cite></p>
     {/if}
   </div>
 </section>
 
 <style>
   .scene-heading {
-  background-color: #e3dede;
-  border: 1px solid var(--asparagus);
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-
-  /* .heading-wrapper {
+    background-color: #e3dede;
+    border: 1px solid var(--asparagus);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
     max-width: 800px;
-    margin: 0 auto;
-  } */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+  }
 
   h2 {
     font-family: "Courier New", monospace;
@@ -51,11 +45,13 @@
   }
 
   p {
-    font-family: "Space Grotesk", serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 1.2rem;
     color: var(--rose);
-    /* max-width: 600px; */
-    /* margin: 0 auto; */
-    /* line-height: 1.5; */
+  }
+
+  cite {
+    font-size: 1rem;
+    color: var(--wenge);
   }
 </style>
