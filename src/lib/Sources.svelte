@@ -11,9 +11,9 @@
 
   <h3>Track 2</h3>
   <p>
-    Quote: St. Mary, Jason, et al. “Perceptions of Academic Achievement
-    and Educational Opportunities Among Black and African American Youth.” Child
-    & Adolescent Social Work Journal, vol. 35, no. 5, Oct. 2018, pp. 499–509.
+    Quote: St. Mary, Jason, et al. “Perceptions of Academic Achievement and
+    Educational Opportunities Among Black and African American Youth.” Child &
+    Adolescent Social Work Journal, vol. 35, no. 5, Oct. 2018, pp. 499–509.
     <a href="https://doi.org/10.1007/s10560-018-0538-4" target="_blank"
       >https://doi.org/10.1007/s10560-018-0538-4</a
     >.
@@ -43,9 +43,9 @@
 
   <h3>Track 3</h3>
   <p>
-    Quote: Troutt, David Dante. “Urban Renewal’s Grandchildren: Remedying
-    the Persistent Effects of Post-War Race Planning.” Fordham Urban Law
-    Journal, vol. 52, no. 1, Oct. 2024, p. COV3.
+    Quote: Troutt, David Dante. “Urban Renewal’s Grandchildren: Remedying the
+    Persistent Effects of Post-War Race Planning.” Fordham Urban Law Journal,
+    vol. 52, no. 1, Oct. 2024, p. COV3.
     <a
       href="https://research.ebsco.com/linkprocessor/plink?id=ab6849d6-1036-3684-b384-ffabdfb4cf6e"
       target="_blank">EBSCOhost</a
@@ -135,7 +135,10 @@
     >.
   </p>
   <p class="template-credit">
-    Music from a public Youtube playlist. View <a href="https://www.youtube.com/playlist?list=PLhUDPsGW64inBr49C0xmZ7oM3G3DeXXPQ">here</a>
+    Music from a public Youtube playlist. View <a
+      href="https://www.youtube.com/playlist?list=PLhUDPsGW64inBr49C0xmZ7oM3G3DeXXPQ"
+      >here</a
+    >.
   </p>
 </section>
 
@@ -162,9 +165,8 @@
   }
 
   .template-credit {
-    margin-top: 3rem;
     font-size: 0.9rem;
-    color: var(--wenge);
+    color: var(--bone);
   }
 
   a[href^="#ref"] {

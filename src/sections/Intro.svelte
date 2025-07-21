@@ -11,7 +11,7 @@
       America.
     </p>
     <p>Make sure to turn on sound!</p>
-    <h1 class="scroll-indicator">↓</h1>
+    <span class="scroll-indicator">↓</span>
     <p></p>
     <p></p>
   </div>
@@ -70,7 +70,7 @@
     line-height: 1.6;
   }
 
-  .scroll-indicator {
+  span {
     font-family: "Caveat", sans-serif;
     font-size: clamp(2.5rem, 3vw, 4rem);
     color: var(--pomp);
