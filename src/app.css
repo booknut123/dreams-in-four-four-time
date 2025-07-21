@@ -69,6 +69,22 @@ sup {
   font-size: 50%;
 }
 
+.horizontal-content a:hover {
+  opacity: 0.8;
+}
+
+.interactive-element {
+  background-color: #e3dede;
+  border: 2px solid var(--wenge);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(90, 78, 77, 0.1);
+  color: var(--wenge);
+  font-family: "Space Grotesk", sans-serif;
+  padding: 20px;
+  font-size: large;
+}
+
 .source-list li[id],
 .subtitle-list li[id],
 [id^="ref-"] {
