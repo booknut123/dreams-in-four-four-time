@@ -1,27 +1,29 @@
 <script>
   // @ts-nocheck
 
+  // image imports
   import AtlHome from "../lib/images/black-home-atl.png";
   import AtlNorthEdu from "../lib/images/white-edu-atl.png";
   import AtlEdu from "../lib/images/all-edu-atl.png";
 
+  // component imports
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
   import Heading from "../lib/Heading.svelte";
   import Spacer from "../lib/Spacer.svelte";
 
+  // chart imports
   import * as Highcharts from "highcharts";
   import "highcharts/modules/exporting";
   import { Chart } from "@highcharts/svelte";
 
+  // academic performance comparison chart configuration
   const chartOptions = {
     chart: {
       type: "bar",
       backgroundColor: "transparent",
-      style: {
-        fontFamily: "Space Grotesk",
-      },
-      marginLeft: 175, // Adjust as needed
+      style: { fontFamily: "Space Grotesk" },
+      marginLeft: 175, // Otherwise "reading proficiency" gets cut off
     },
     title: {
       text: "Academic Performance Comparison",
@@ -43,10 +45,8 @@
         },
       },
     },
-
     yAxis: {
-      min: 0,
-      max: 100,
+      min: 0, max: 100,
       title: {
         text: "Percent Proficient",
         style: {
@@ -65,12 +65,12 @@
       valueSuffix: "%",
       backgroundColor: "#f5f5f5",
       style: {
-        color: "#1e1e1e",
+        color: "var(--wenge)",
       },
     },
     legend: {
       itemStyle: {
-        color: "var(--black)",
+        color: "var(--wenge)",
         fontWeight: "bold",
       },
     },
@@ -78,13 +78,13 @@
       {
         type: "bar",
         name: "Therrell High",
-        color: "#d98c8c", // rose
+        color: "var(--rose)",
         data: [7, 18],
       },
       {
         type: "bar",
         name: "Walton High",
-        color: "#7a9376", // asparagus
+        color: "var(--asparagus)",
         data: [85, 88],
       },
     ],
@@ -92,12 +92,7 @@
       enabled: false,
     },
     caption: {
-      text: "Public data from GreatSchools.org and Niche.com.<sup><a href='#source-1' id='ref-1'>1</a></sup><br /> Therrell and Walton High are public high schools in the Atlanta metro area.",
-      style: {
-        color: "#5a4e4d",
-        fontSize: "0.8rem",
-        paddingTop: "0.5rem",
-      },
+      text: "Public data from GreatSchools.org and Niche.com. <sup><a href='#source-1' id='ref-1'>1</a></sup><br />Therrell and Walton High are public high schools in the Atlanta metro area.",
     },
   };
 </script>
