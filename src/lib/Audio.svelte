@@ -1,7 +1,7 @@
 <script lang="ts">
   /// <reference types="youtube" />
   let player: YT.Player;
-  let audioEnabled = true; // default ON
+  let audioEnabled = true; // default on
   let currentTrackTitle = "";
   let currentTrackIndex = 0;
 
@@ -19,7 +19,7 @@
         playerVars: {
           listType: "playlist",
           list: "PLhUDPsGW64inBr49C0xmZ7oM3G3DeXXPQ",
-          autoplay: 1, // autoplay ON
+          autoplay: 1, // autoplay on
           controls: 0,
         },
         events: {
@@ -84,7 +84,7 @@
   function updateTrackInfo() {
     if (player && player.getVideoData) {
       const data = player.getVideoData();
-      currentTrackTitle = data.title || "";
+      currentTrackTitle = data.title || "Nothing playing currently";
 
       // Update current track index
       if (player.getPlaylistIndex) {
@@ -92,18 +92,36 @@
       }
     }
   }
+
+  let minimized = false;
+
+  function toggleMinimize() {
+    minimized = !minimized;
+  }
 </script>
 
 <!-- Hidden YouTube iframe -->
 <div id="yt-player" style="width: 0; height: 0; overflow: hidden;"></div>
 
-<div class="audio-controls">
-  <button on:click={prevTrack}>⏮️</button>
-  <button on:click={toggleAudio}>
-    {audioEnabled ? "🔊" : "🔇"}
-  </button>
-  <button on:click={nextTrack}>⏭️</button>
-  {#if currentTrackTitle}
+<div class="audio-controls {minimized ? 'minimized' : ''}">
+  <div class="button-row">
+    {#if !minimized}
+      <button on:click={prevTrack}>⏮️</button>
+    {/if}
+    <button on:click={toggleAudio}>
+      {audioEnabled ? "⏸️" : "▶️"}
+    </button>
+
+    {#if !minimized}
+      <button on:click={nextTrack}>⏭️</button>
+    {/if}
+
+    <button class="minimize-toggle" on:click={toggleMinimize}>
+      {minimized ? "+" : "-"}
+    </button>
+  </div>
+
+  {#if !minimized && currentTrackTitle}
     <p class="track-title">{currentTrackTitle}</p>
   {/if}
 </div>
@@ -118,17 +136,30 @@
     border-radius: 10px;
     z-index: 1000;
     text-align: center;
-    min-width: 150px;
+    /* min-width: 220px; */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   .audio-controls button {
     background: none;
     border: 2px solid #5a4e4d;
-    color: #5a4e4d;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
   }
 
   .audio-controls button:hover {
@@ -139,6 +170,8 @@
   .track-title {
     font-size: 0.8rem;
     color: #333;
-    margin-top: 5px;
+    margin: 2px;
+    max-width: 100%;
+    word-wrap: break-word;
   }
 </style>
