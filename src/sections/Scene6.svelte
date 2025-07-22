@@ -56,7 +56,7 @@
 
     if (horizontalContainer && wrapper && boxes.length > 0) {
       const containerWidth = window.innerWidth;
-      const boxWidth = 500;
+      const boxWidth = 400;
       const spacing = 40; // CSS Margin: 20px on each side
 
       // Calculate total width and scroll distance (to start off screen and scroll to other side)
@@ -80,6 +80,32 @@
         { x: containerWidth }, // off-screen to the right
         { x: -totalWidth - containerWidth, ease: "none" } // offscreen to the left
       );
+
+      // Flashcard-like flip
+      boxes.forEach((box, index) => {
+        let isFlipped = false;
+        const cardInner = box.querySelector(".card-inner");
+
+        box.addEventListener("click", () => {
+          isFlipped = !isFlipped;
+
+          if (isFlipped) {
+            // Flip to back
+            gsap.to(cardInner, {
+              rotationX: 180,
+              duration: 0.6,
+              ease: "power2.inOut",
+            });
+          } else {
+            // Flip to front
+            gsap.to(cardInner, {
+              rotationX: 0,
+              duration: 0.6,
+              ease: "power2.inOut",
+            });
+          }
+        });
+      });
     }
 
     ScrollTrigger.refresh();
@@ -169,37 +195,83 @@
 <div class="horizontal-container">
   <div class="horizontal-content-wrapper">
     <div class="horizontal-content">
-      <h2>🎵 Hear Ari's Story</h2>
-      <p>Want to hear Ari's beats? Want to help the next Ari?</p>
-      <p>Every beat tells a story. Every story deserves to be heard.</p>
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>🎧 Hear Ari's Story</h2>
+          <p>Want to hear Ari's beats? Want to help the next Ari?</p>
+        </div>
+        <div class="card-back">
+          <p>Every beat tells a story.</p>
+          <p>
+            Just by supporting youth music programs, you can help every story be
+            heard.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="horizontal-content">
-      <h2>📊 Learn the Data</h2>
-      <p>
-        Learn more about the realities shaping Black futures at the
-        <strong>
-          <a href="https://blackwealthdata.org" target="_blank">
-            Black Wealth Data Center.
-          </a>
-        </strong>
-      </p>
-      <p>Understanding the gap is the first step to bridging it.</p>
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>📚 Explore More Stories</h2>
+          <p>Meet other young Black creators shaping the future.</p>
+        </div>
+        <div class="card-back">
+          <p>Real voices. Real impact.</p>
+          <p>
+            Take some time to watch short documentaries on Black excellence.
+            Read essays and interviews.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="horizontal-content">
-      <h2>🏪 Support Locally</h2>
-      <p>Support local Black-owned businesses.</p>
-      <p>Every dollar spent is a vote for the future you want to see.</p>
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>📊 Learn the Data</h2>
+          <p>Dive deeper into the numbers behind the narrative.</p>
+        </div>
+        <div class="card-back">
+          <p>Understanding the gap is the first step to bridging it.</p>
+          <p>
+            Learn more about the realities shaping Black futures at the
+            <strong>
+              <a href="https://blackwealthdata.org" target="_blank">
+                Black Wealth Data Center.
+              </a>
+            </strong>
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="horizontal-content">
-      <h2>🗳️ Advocate for Change</h2>
-      <p>
-        Advocate for equitable investment in education, housing, and
-        entrepreneurship.
-      </p>
-      <p>Policy changes create pathways. Pathways create possibilities.</p>
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>🛍️ Support Locally</h2>
+          <p>Your dollar has power. Use it with purpose.</p>
+        </div>
+        <div class="card-back">
+          <p>Every dollar spent is a vote for the future you want to see.</p>
+          <p>You can look for Black-owned businesses near you and explore Black-owned online marketplaces.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="horizontal-content">
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>🗳️ Advocate for Change</h2>
+          <p>
+            Equity doesn't happen by accident. Push for policies that matter.
+          </p>
+        </div>
+        <div class="card-back">
+          <p>Policy changes create pathways. Pathways create possibilities.</p>
+          <p>Explore local advocacy groups. Learn about upcoming legislation. Support organizations driving change.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -237,15 +309,6 @@
     overflow: hidden;
   }
 
-  .horizontal-content {
-    transition: transform 0.3s ease;
-  }
-
-  .horizontal-content:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-
   .horizontal-content-wrapper {
     display: flex;
     height: 100%;
@@ -253,11 +316,38 @@
   }
 
   .horizontal-content {
-    width: 500px;
+    width: 400px;
     height: 300px;
-    margin: 0 20px; /* in line with above */
+    margin: 0 20px;
     flex-shrink: 0; /* boxes stay the same size */
+    cursor: pointer;
+    perspective: 1000px; /* Enable 3D perspective for flip */
+  }
+
+  .horizontal-content:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform-origin: center center; /* Ensure rotation happens at center */
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     padding: 20px;
+    box-sizing: border-box;
 
     border: 5px solid #bdb3b2;
     background: rgba(255, 255, 255, 0.9);
@@ -268,7 +358,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
+  }
+
+  .card-back {
+    transform: rotateX(180deg);
+    background: rgba(var(--asparagus-rgb), 0.1);
+    border-color: var(--asparagus);
+  }
+
+  .card-back p {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--asparagus);
+    font-weight: 500;
+  }
+
+  /* Remove the hover transform on card-inner to prevent interference */
+  .card-inner:hover {
+    transform: none;
   }
 </style>
