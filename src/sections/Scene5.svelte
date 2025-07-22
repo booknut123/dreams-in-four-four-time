@@ -1,10 +1,12 @@
 <script>
+  // component imports
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
   import Heading from "../lib/Heading.svelte";
   import FullWidth from "../lib/FullWidthText.svelte";
   import Spacer from "../lib/Spacer.svelte";
 
+  // wealth interactive configuration
   let guess = "";
   let showResult = false;
   let guessNumber = 0;
@@ -24,6 +26,8 @@
     guessNumber = 0;
     userGuessed = false;
   }
+
+  $: numericGuess = Number(guess);
 </script>
 
 <Spacer />
@@ -48,6 +52,8 @@
         numbers mirror Atlanta's.
       </ArticleText>
       <ArticleText>In Boston, the contrast is even starker.</ArticleText>
+
+      <!-- wealth interactive UI -->
       <ArticleText>
         <div class="interactive-element">
           <h3>Guess the Wealth Gap</h3>
@@ -71,7 +77,10 @@
 
             {#if !showResult}
               <div class="button-row">
-                <button on:click={revealWealth}>Submit Guess</button>
+                <button on:click={revealWealth} disabled={!guess || (numericGuess < 0)}>
+                  Submit Guess
+                </button>
+
                 <button
                   on:click={() => {
                     showResult = true;
@@ -80,7 +89,7 @@
                 >
               </div>
             {:else}
-              <button on:click={resetGuess}>⟳</button>
+              <button on:click={resetGuess} style="font-size: 1.1rem">⟳</button>
             {/if}
           </div>
 
@@ -94,7 +103,7 @@
                     <strong>Your guess:</strong> ${guessNumber.toLocaleString()}
                   </p>
                 {:else}
-                  <p><em>You chose not to guess. Totally fair.</em></p>
+                  <p>You chose not to guess. Totally fair.</p>
                 {/if}
                 <p>
                   <strong>Actual median net worth for Black households:</strong>
@@ -103,16 +112,25 @@
                 <p style="margin-top: 10px; opacity: 0.9;">
                   Not $800. Not $80. Eight dollars.
                 </p>
+                <p style="margin-top: 10px; opacity: 0.9;">
+                  (Yes, actually eight dollars. You can read more here: <a
+                    href="https://www.bostonfed.org/publications/one-time-pubs/color-of-wealth.aspx"
+                    target="_blank"
+                    >https://www.bostonfed.org/publications/one-time-pubs/color-of-wealth.aspx</a
+                  >)
+                </p>
               </div>
             </div>
           {/if}
         </div>
       </ArticleText>
+      <!-- End interactive UI -->
+
       <div class="thought">
         <ArticleText>
           This isn't about effort. I work hard. Mom works hard. Zora works hard.
           This is about structures - about decades of underinvestment.
-      </ArticleText>
+        </ArticleText>
       </div>
     </div>
   {/snippet}
@@ -160,6 +178,11 @@
     transform: translateY(-2px);
   }
 
+  .guess-input button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   .wealth-result {
     animation: fadeIn 0.5s ease-in;
   }
@@ -177,16 +200,9 @@
 
   .button-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     margin-top: 10px;
-  }
-
-  @media (min-width: 480px) {
-    .button-row {
-      flex-direction: row;
-      justify-content: center;
-    }
   }
 
   .button-row button {
