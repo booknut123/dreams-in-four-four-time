@@ -61,7 +61,7 @@
 
       // Calculate total width and scroll distance (to start off screen and scroll to other side)
       const totalWidth = (boxWidth + spacing) * boxes.length;
-      const scrollDistance = totalWidth + containerWidth;
+      const scrollDistance = totalWidth * 0.8;
 
       // Create timeline - https://gsap.com/docs/v3/Plugins/ScrollTrigger/
       const tl = gsap.timeline({
@@ -78,7 +78,7 @@
       tl.fromTo(
         wrapper,
         { x: containerWidth }, // off-screen to the right
-        { x: -totalWidth - containerWidth, ease: "none" } // offscreen to the left
+        { x: -totalWidth, ease: "none" } // offscreen to the left
       );
 
       // Flashcard-like flip
@@ -254,7 +254,10 @@
         </div>
         <div class="card-back">
           <p>Every dollar spent is a vote for the future you want to see.</p>
-          <p>You can look for Black-owned businesses near you and explore Black-owned online marketplaces.</p>
+          <p>
+            You can look for Black-owned businesses near you and explore
+            Black-owned online marketplaces.
+          </p>
         </div>
       </div>
     </div>
@@ -269,7 +272,10 @@
         </div>
         <div class="card-back">
           <p>Policy changes create pathways. Pathways create possibilities.</p>
-          <p>Explore local advocacy groups. Learn about upcoming legislation. Support organizations driving change.</p>
+          <p>
+            Explore local advocacy groups. Learn about upcoming legislation.
+            Support organizations driving change.
+          </p>
         </div>
       </div>
     </div>
