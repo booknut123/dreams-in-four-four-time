@@ -1,6 +1,6 @@
 <script>
   import Audio from "./lib/Audio.svelte";
-  import MusicNote from "./lib/MusicNote.svelte";
+  // import MusicNote from "./lib/MusicNote.svelte";
   import Intro from "./sections/Intro.svelte";
   import Scene1 from "./sections/Scene1.svelte"
   import Scene2 from "./sections/Scene2.svelte";
@@ -20,7 +20,7 @@
 
 <main>
   <Audio />
-  <MusicNote />
+  <!-- <MusicNote /> -->
   <Intro />
   <Scene1 />
   <Scene2 />

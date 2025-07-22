@@ -1,3 +1,4 @@
+<!-- Not currently in use - decided to remove -->
 <script>
   import { onMount } from "svelte";
 
