@@ -1,5 +1,6 @@
 <script>
   import Audio from "./lib/Audio.svelte";
+  import MusicNote from "./lib/MusicNote.svelte";
   import Intro from "./sections/Intro.svelte";
   import Scene1 from "./sections/Scene1.svelte"
   import Scene2 from "./sections/Scene2.svelte";
@@ -9,6 +10,7 @@
   import Scene6 from "./sections/Scene6.svelte";
   import Outro from "./sections/Outro.svelte";
   import Footer from "./sections/Footer.svelte";
+  
 </script>
 
 <svelte:head>
@@ -18,6 +20,7 @@
 
 <main>
   <Audio />
+  <MusicNote />
   <Intro />
   <Scene1 />
   <Scene2 />
