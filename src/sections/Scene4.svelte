@@ -1,17 +1,24 @@
 <script>
   // @ts-nocheck
 
+  // component imports
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
   import Heading from "../lib/Heading.svelte";
   import FullWidth from "../lib/FullWidthText.svelte";
   import Spacer from "../lib/Spacer.svelte";
+  import FullWidthText from "../lib/FullWidthText.svelte";
 
+  // chart imports
+  import { onMount } from "svelte";
   import * as Highcharts from "highcharts";
   import "highcharts/modules/exporting";
   import { Chart } from "@highcharts/svelte";
-  import FullWidthText from "../lib/FullWidthText.svelte";
 
+  let showChart = false;
+  let chartContainer;
+
+  // black owned businesses chart configuration
   const chartOptions = {
     chart: {
       type: "column",
@@ -22,23 +29,25 @@
     },
     title: {
       text: "Black-Owned Businesses: Atlanta vs National",
-      align: "center",
+      align: "left",
       style: {
-        color: "var(--pomp)",
-        fontFamily: "DM Serif Text, serif",
-        fontSize: "1.4rem",
+        color: "var(--asparagus)",
+        fontFamily: "DM Serif Text",
+        fontSize: "1.5rem",
       },
     },
     xAxis: {
       categories: ["2020", "2021", "2022"],
       labels: {
         style: {
-          color: "var(--wenge)",
+          color: "var(--pomp)",
+          fontSize: "1rem",
         },
       },
     },
     yAxis: {
       min: 0,
+      max: 60,
       title: {
         text: "% of Businesses",
       },
@@ -46,6 +55,7 @@
         format: "{value}%",
         style: {
           color: "var(--wenge)",
+          fontSize: "1rem",
         },
       },
     },
@@ -65,12 +75,20 @@
         type: "column",
         color: "var(--rose)",
         data: [7.4, 8.8, 11.3],
+        animation: {
+          duration: 3000,
+          easing: "easeOut",
+        },
       },
       {
         name: "National",
         type: "column",
         color: "var(--asparagus)",
         data: [2.4, 2.7, 3.3],
+        animation: {
+          duration: 3000,
+          easing: "easeOut",
+        },
       },
     ],
     credits: {
@@ -78,19 +96,35 @@
     },
     legend: {
       itemStyle: {
-        color: "var(--black)",
+        color: "var(--wenge)",
+        fontWeight: "bold",
       },
     },
     caption: {
       text: "Source: LendingTree analysis of 2022 U.S. Census Bureau Annual Business Survey data.",
-      style: {
-        color: "#5a4e4d",
-        fontSize: "0.8rem",
-        paddingTop: "0.5rem",
-      },
     },
   };
 
+  onMount(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            showChart = true;
+            observer.unobserve(chartContainer); // stop observing once triggered
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 1, // trigger when fully visible
+      }
+    );
+    if (chartContainer) observer.observe(chartContainer);
+  });
+
+  // interactive budget configuration
   let selectedItems = [];
   let remainingBudget = 250;
 
@@ -167,8 +201,10 @@
 
 <Scroller layout="right">
   {#snippet sticky()}
-    <div class="chart-container">
-      <Chart {Highcharts} options={chartOptions} />
+    <div bind:this={chartContainer} style="min-height: 400px;">
+      {#if showChart}
+        <Chart {Highcharts} options={chartOptions} />
+      {/if}
     </div>
   {/snippet}
 
@@ -205,8 +241,10 @@
       </ArticleText>
       <div class="thought">
         <ArticleText>
-          I'm not asking for a shortcut - just a runway. <em>Talent</em> without <em>capital</em> is like a <em>song</em> without a
-      <em>speaker</em>. Who’s going to hear it?
+          I'm not asking for a shortcut - just a runway. <em>Talent</em> without
+          <em>capital</em>
+          is like a <em>song</em> without a
+          <em>speaker</em>. Who’s going to hear it?
         </ArticleText>
       </div>
     </div>
@@ -216,7 +254,10 @@
 <FullWidthText>
   <div class="interactive-element">
     <h3>Pack Ari's Digital Studio</h3>
-    <p>Ari has scraped together money by tutoring younger students! Help her choose what she can afford with her $250 budget:</p>
+    <p>
+      Ari has scraped together money by tutoring younger students! Help her
+      choose what she can afford with her $250 budget:
+    </p>
 
     <div class="budget-display">
       <strong>Budget Remaining: ${remainingBudget}</strong>
@@ -245,7 +286,8 @@
     <div class="studio-result">
       {#if allEssentialsSelected}
         <div class="success-message">
-          ✅ <strong>Bare minimum:</strong> Great! Ari can start making beats, but she's missing key tools for professional production.
+          ✅ <strong>Bare minimum:</strong> Great! Ari can start making beats, but
+          she's missing key tools for professional production.
         </div>
       {:else}
         <div class="warning-message">
@@ -262,25 +304,18 @@
     border: none;
     box-shadow: none;
   }
-  h3 {
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-  }
 
-  .interactive-element p, .studio-result {
-    margin-bottom: 20px;
+  .interactive-element p,
+  .studio-result {
     line-height: 1.6;
-    font-size: large;
   }
 
   .budget-display {
     background: var(--bone);
     padding: 20px;
     border-radius: 10px;
-    margin: 20px 0;
     border: 1px solid rgba(255, 215, 0, 0.3);
     text-align: center;
-    font-size: large;
   }
 
   .studio-simulator {
