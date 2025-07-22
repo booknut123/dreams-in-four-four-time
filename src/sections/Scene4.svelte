@@ -86,7 +86,7 @@
         color: "var(--asparagus)",
         data: [2.4, 2.7, 3.3],
         animation: {
-          duration: 3000,
+          duration: 1500,
           easing: "easeOut",
         },
       },
