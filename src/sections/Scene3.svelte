@@ -206,15 +206,7 @@
     text-align: center;
     width: 80vh;
   }
-  /* figcaption {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.9rem;
-    color: var(--wenge);
-    margin-top: 0.75rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  } */
+  
   img {
     width: 80vh;
   }

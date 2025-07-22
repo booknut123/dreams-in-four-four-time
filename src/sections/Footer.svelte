@@ -3,7 +3,6 @@
   import Sources from "../lib/Sources.svelte";
 </script>
 
-<Spacer />
 <footer class="site-footer">
   <div class="footer-content">
     <p><strong>Made by Kailyn Lau</strong> — 2025</p>

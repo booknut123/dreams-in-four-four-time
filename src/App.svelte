@@ -7,6 +7,7 @@
   import Scene4 from "./sections/Scene4.svelte";
   import Scene5 from "./sections/Scene5.svelte";
   import Scene6 from "./sections/Scene6.svelte";
+  import Outro from "./sections/Outro.svelte";
   import Footer from "./sections/Footer.svelte";
 </script>
 
@@ -24,5 +25,6 @@
   <Scene4 />
   <Scene5 />
   <Scene6 />
+  <Outro />
   <Footer />
 </main>
