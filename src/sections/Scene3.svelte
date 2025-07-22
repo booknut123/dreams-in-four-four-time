@@ -1,18 +1,23 @@
 <script>
   // @ts-nocheck
+
+  // iamge imports
   import OaklandBlackPoverty from "../lib/images/black-poverty-oakland.png";
   import OaklandDebtRatio from "../lib/images/debt-income-oakland.png";
 
+  // component imports
   import Scroller from "../lib/Scroller.svelte";
   import ArticleText from "../lib/ArticleText.svelte";
   import Heading from "../lib/Heading.svelte";
   import FullWidth from "../lib/FullWidthText.svelte";
   import Spacer from "../lib/Spacer.svelte";
 
+  // chart imports
   import * as Highcharts from "highcharts";
   import "highcharts/modules/exporting";
   import { Chart } from "@highcharts/svelte";
 
+  // zora's budget chart configuration
   const chartOptions = {
     chart: {
       type: "pie",
@@ -25,9 +30,9 @@
       text: "Zora’s Monthly Budget (est.)",
       align: "center",
       style: {
-        color: "#5a4e4d",
-        fontFamily: "DM Serif Text, serif",
-        fontSize: "1.4rem",
+        color: "var(--asparagus)",
+        fontFamily: "DM Serif Text",
+        fontSize: "1.5rem",
       },
     },
     tooltip: {
@@ -35,7 +40,7 @@
     },
     plotOptions: {
       pie: {
-        innerSize: "40%", // makes it donut-style
+        innerSize: "40%", //donut-style
         dataLabels: {
           enabled: true,
           format: "{point.name}: {point.percentage:.1f}%",
@@ -61,19 +66,11 @@
     },
     caption: {
       text: "Estimated based on MIT Living Wage Calculator & Education Data Initiative. <br /> Taxes not included.",
-      style: {
-        color: "#5a4e4d",
-        fontSize: "0.8rem",
-        paddingTop: "0.5rem",
-      },
-    },
-    alt: {
-      text: "Pie chart of monthly budget exceeding income for an Oakland resident.",
     },
   };
 </script>
 
-<Spacer height="20vh" />
+<Spacer />
 
 <Scroller layout="left">
   {#snippet sticky()}
@@ -96,8 +93,8 @@
         cousin Zora’s tiny apartment.
       </ArticleText>
       <ArticleText>
-        Zora is 21 and lives in a one-bedroom meant to be temporary - just until
-        she saved enough to finish her degree.
+        Zora is 21 and lives in a one-bedroom meant to be temporary - <em>just until
+        she saved enough to finish her degree.</em>
       </ArticleText>
     </div>
   {/snippet}
@@ -113,12 +110,12 @@
   {#snippet scrolly()}
     <div class="scene-text">
       <ArticleText>
-        Rent is $1,750. Her job pays $18/hr. That's $2,880 before taxes.<sup
+        Zora's job pays $18/hr. That's $2,880 before taxes.<sup
           ><a href="#source-4" id="ref-4">4</a></sup
         >
       </ArticleText>
       <ArticleText>
-        But her bills total nearly $3,000. Food, transit, medical costs, loan
+        But when rent is <strong>$1,750</strong>, Zora's bills total nearly <strong>$3,000</strong>. Food, transit, medical costs, loan
         payments - it all adds up. And then some.
       </ArticleText>
       <ArticleText>Zora is falling behind, $100 at a time.</ArticleText>
