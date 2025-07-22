@@ -92,7 +92,7 @@
       enabled: false,
     },
     caption: {
-      text: "Public data from GreatSchools.org and Niche.com. <sup><a href='#source-1' id='ref-1'>1</a></sup><br />Therrell and Walton High are public high schools in the Atlanta metro area.",
+      text: "Public data from GreatSchools.org and Niche.com. <sup><a href='#source-1' id='ref-1'>1</a></sup><br />Therrell and Walton High are public high schools in the Atlanta metro area, although Therrell High is located in a poorer district in southern Atlanta with a higher Black population.",
     },
   };
 </script>

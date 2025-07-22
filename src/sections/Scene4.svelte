@@ -237,7 +237,9 @@
       <ArticleText>
         In Atlanta, despite being a majority Black city, only <strong
           >11.3%</strong
-        ><sup><a href="#source-9" id="ref-9">9</a></sup> of businesses are Black-owned.
+        > of businesses are Black-owned.
+        That number sounds low - until you compare it to the even lower 3.3% nationally, whereas White-owned businesses number over 4 million
+        - a whopping <strong>81%</strong> of all businesses in 2022.<sup><a href="#source-9" id="ref-9">9</a></sup>
       </ArticleText>
       <div class="thought">
         <ArticleText>
